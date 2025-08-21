@@ -5,8 +5,8 @@ class Solution {
         String maxstr = s.substring(0,1);
 
         for(int i=0;i<s.length();i++){
-            for(int j=i+maxlength;j<=s.length();j++){
-                if(j-i>1 && IsPalindrome(s.substring(i,j))){
+            for(int j=i+1;j<=s.length();j++){
+                if(j-i>maxlength && IsPalindrome(s.substring(i,j))){
                     maxlength = j-i;
                     maxstr = s.substring(i,j);
                 }
