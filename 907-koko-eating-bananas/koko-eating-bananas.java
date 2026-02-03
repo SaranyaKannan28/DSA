@@ -2,6 +2,7 @@ class Solution {
     public int minEatingSpeed(int[] piles, int h) {
         int low =1 ;
         int high = Integer.MIN_VALUE;
+        int ans = piles.length;
 
         for(int i:piles){
             high=Math.max(i,high);
@@ -12,6 +13,7 @@ class Solution {
 
             int value= Rate(piles,mid);
              if(value<=h){
+                ans=mid;
                 high=mid-1;
             } 
             else{
@@ -19,7 +21,7 @@ class Solution {
             }
 
         }
-        return low;
+        return ans;
     }
 
     public static int Rate(int []arr,int mid){
